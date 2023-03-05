@@ -4,7 +4,7 @@ Generates files which can help judges at events. Not supported by, or affiliated
 # Setup Instructions
 Clone the repository and open with your IDE (the author used IntelliJ). Configure your IDE to compile using Java 17.
 
-Alternatively, copy the Connect.java and add a sqlite driver to your classpath.
+Alternatively, copy the `src/main/java/Connect.java` file and add a sqlite driver to your classpath.
 
 Well before the event, you should download the FIRST Tech Challenge scoring system locally, create an offline event 
 with fake teams, and go through the steps below to make you can get it working.
