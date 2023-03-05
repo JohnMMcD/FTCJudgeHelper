@@ -1,18 +1,8 @@
 import java.sql.*;
 import java.util.ArrayList;
 
-/**
- * To use this, export the database using the "Export Divisions" button after the match list has been generated.
- * Then change the `url` to match the location where the file was exported.
- * You can also customize the `header` to what your Judge Match Observers want to evaluate.
- * Finally, compile and execute this class, redirecting the output to a file.
- * This will generate two sections, separated by some blank lines.
- * Copy each section into its own file.
- * For each section / file, open a new Excel workbook and use the 'Data' area of the Ribbon to import the file.
- * The first section can be used by your Judge Match Observers to note what the teams are doing on the field.
- * The second section can be used by judges doing pit interviews to help them determine the best time to interview teams.
- * */
-public class Connect {
+/** See README.md for instructions. */
+public class JudgeHelper {
     // Alternate version for Windows:
     // static String url = "jdbc:sqlite:C:/ftc.db";
     static String url = "jdbc:sqlite:/Users/johnmcdonnell/FTC/Scorekeeper_Binary/FIRST-Tech-Challenge-Live-v4.2.6/db/usnjcmptpke_1.db";
