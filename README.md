@@ -1,10 +1,15 @@
 # FTCJudgeHelper
 Generates files which can help judges at events. Not supported by or affiliated with FIRST.
 
+# Prerequisites
+These instructions assume:
+* some familiarity with programming software in Java and operating an IDE
+* some familiarity with the FIRST Tech Challenge scoring system
+
 # Setup Instructions
 Clone the repository and open with your IDE (the author used IntelliJ). Configure your IDE to compile using Java 17.
 
-Alternatively, copy the `src/main/java/Connect.java` file and add a sqlite driver to your classpath.
+If you are proficient using the JDK, you can copy the `src/main/java/Connect.java` file, add a sqlite driver to your classpath, and compile it.
 
 Well before the event, you should download the FIRST Tech Challenge scoring system locally, create an offline event 
 with fake teams, and go through the steps below to make sure you can do them correctly on the day of the event.
