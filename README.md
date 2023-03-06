@@ -1,5 +1,5 @@
 # FTCJudgeHelper
-Generates files which can help judges at events. Not supported by, or affiliated with FIRST.
+Generates files which can help judges at events. Not supported by or affiliated with FIRST.
 
 # Setup Instructions
 Clone the repository and open with your IDE (the author used IntelliJ). Configure your IDE to compile using Java 17.
