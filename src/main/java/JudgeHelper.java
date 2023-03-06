@@ -9,8 +9,8 @@ public class JudgeHelper {
     static String header = "Team\tMatch\tNavigated\tAuto Cones\tGame Play\tReliability\tStandout";
 
     public static void showMatches(Connection con, Boolean makeTable) throws SQLException {
-        var selectTeamNumbers = "SELECT DISTINCT number FROM teams ORDER BY number";
-        var teamList = new ArrayList<Integer>();
+        String selectTeamNumbers = "SELECT DISTINCT number FROM teams ORDER BY number";
+        ArrayList<Integer> teamList = new ArrayList<>();
         Statement stmt = con.createStatement();
         ResultSet rsTeamList = stmt.executeQuery(selectTeamNumbers);
         while (rsTeamList.next()) {
@@ -21,7 +21,7 @@ public class JudgeHelper {
             System.out.println(header);
         }
         for (Integer teamNumber: teamList) {
-            var selectMatches = String.format(
+            String selectMatches = String.format(
                     "SELECT match, (SELECT TeamNameShort FROM Team WHERE TeamNumber = %d) " +
                             "FROM quals WHERE %d IN (red1, red2, blue1, blue2) ORDER BY match;",
                     teamNumber, teamNumber);
@@ -36,7 +36,7 @@ public class JudgeHelper {
             // Team-finder mode: print the matches the teams are in
             {
                 System.out.printf("%d \t %s \t ", teamNumber, rsTeamList.getString(2));
-                var sb = new StringBuilder();
+                StringBuilder sb = new StringBuilder();
                 while (rsGetMatches.next()) {
                     sb.append(String.format("%d \t ", rsTeamList.getInt("match")));
                 }

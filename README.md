@@ -7,7 +7,7 @@ These instructions assume:
 * some familiarity with the FIRST Tech Challenge scoring system
 
 # Setup Instructions
-Clone the repository and open with your IDE (the author used IntelliJ). Configure your IDE to compile using Java 17.
+Clone the repository and open with your IDE (the author used IntelliJ). Configure your IDE to compile using Java 8 or higher.
 
 If you are proficient using the JDK, you can copy the `src/main/java/Connect.java` file, add a sqlite driver to your classpath, and compile it.
 
