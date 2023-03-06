@@ -6,15 +6,15 @@ public class JudgeHelper {
     // Alternate version for Windows:
     // static String url = "jdbc:sqlite:C:/ftc.db";
     static String url = "jdbc:sqlite:/Users/johnmcdonnell/FTC/Scorekeeper_Binary/FIRST-Tech-Challenge-Live-v4.2.6/db/usnjcmptpke_1.db";
-    static String header = "Team|Match|Navigated|Cones Scored|Parked|Game Play|Reliability|Standout";
+    static String header = "Team\tMatch\tNavigated\tAuto Cones\tGame Play\tReliability\tStandout";
 
     public static void showMatches(Connection con, Boolean makeTable) throws SQLException {
-        var selectTeamNumbers = "select distinct number from teams order by number";
+        var selectTeamNumbers = "SELECT DISTINCT number FROM teams ORDER BY number";
         var teamList = new ArrayList<Integer>();
         Statement stmt = con.createStatement();
-        ResultSet rs = stmt.executeQuery(selectTeamNumbers);
-        while (rs.next()) {
-            teamList.add(rs.getInt("number"));
+        ResultSet rsTeamList = stmt.executeQuery(selectTeamNumbers);
+        while (rsTeamList.next()) {
+            teamList.add(rsTeamList.getInt("number"));
         }
 
         if (makeTable) {
@@ -22,31 +22,33 @@ public class JudgeHelper {
         }
         for (Integer teamNumber: teamList) {
             var selectMatches = String.format(
-                    "select match, (select TeamNameShort from Team where TeamNumber = %d) " +
-                            "from quals where %d in (red1, red2, blue1, blue2);",
+                    "SELECT match, (SELECT TeamNameShort FROM Team WHERE TeamNumber = %d) " +
+                            "FROM quals WHERE %d IN (red1, red2, blue1, blue2) ORDER BY match;",
                     teamNumber, teamNumber);
             ResultSet rsGetMatches = stmt.executeQuery(selectMatches);
 
             if (makeTable) {
                 while (rsGetMatches.next()) {
-                    System.out.printf("%d | %d %n", teamNumber, rs.getInt("match"));
+                    System.out.printf("%d \t %d %n", teamNumber, rsTeamList.getInt("match"));
                 }
             }
-            else {
-                System.out.printf("%d | %s | ", teamNumber, rs.getString(2));
+            else
+            // Team-finder mode: print the matches the teams are in
+            {
+                System.out.printf("%d \t %s \t ", teamNumber, rsTeamList.getString(2));
                 var sb = new StringBuilder();
                 while (rsGetMatches.next()) {
-                    sb.append(String.format("%d | ", rs.getInt("match")));
+                    sb.append(String.format("%d \t ", rsTeamList.getInt("match")));
                 }
-                System.out.printf("%s %n", sb.toString().replaceAll("[|]\\s+$",""));
+                System.out.printf("%s %n", sb.toString().replaceAll("\\s+$",""));
             }
         }
     }
 
 
-    /** This just shows the match list in its usual form. */
+    /** This shows the match list in its usual form. */
     public static void showMatchListRegular(Connection con) throws SQLException {
-        String query = "select match, red1, red2, blue1, blue2 from quals order by match";
+        String query = "SELECT match, red1, red2, blue1, blue2 FROM quals ORDER BY match";
         Statement stmt = con.createStatement();
         ResultSet rs = stmt.executeQuery(query);
         while (rs.next()) {
