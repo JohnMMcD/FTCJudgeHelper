@@ -1,0 +1,16 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="JudgeHelper" type="Application" factoryName="Application">
+    <option name="ALTERNATIVE_JRE_PATH" value="/Library/Java/JavaVirtualMachines/amazon-corretto-8.jdk/Contents/Home" />
+    <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+    <classpathModifications>
+      <entry path="$PROJECT_DIR$/sqlite.jar" />
+    </classpathModifications>
+    <output_file path="JudgeHelper.txt" is_save="true" />
+    <option name="MAIN_CLASS_NAME" value="JudgeHelper" />
+    <module name="JudgeHelper" />
+    <option name="PROGRAM_PARAMETERS" value="$USER_HOME$/FTC/Scorekeeper_Binary/FIRST-Tech-Challenge-Live-v4.2.6/db/usnjcmptpke_1.db" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
