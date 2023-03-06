@@ -22,33 +22,31 @@ The first section can be used by your Judge Match Observers to note what the tea
 
 The second section shows the matches which each team will be playing in; this can be used by judges doing pit interviews to help them determine the best time to interview a team.
 
-`
-Team|Match|Navigated|Cones Scored|Parked|Game Play|Reliability|Standout
-207 | 3 
-207 | 7 
-207 | 11 
-207 | 15 
-207 | 17 
-237 | 1 
-237 | 6 
-237 | 10 
-237 | 15 
-237 | 19 
-247 | 4 
-247 | 6 
-247 | 9 
-247 | 12 
-247 | 16 
-248 | 4 
-248 | 7 
-248 | 10 
-248 | 13 
-248 | 17 
-...
+        Team|Match|Navigated|Cones Scored|Parked|Game Play|Reliability|Standout
+        207 | 3 
+        207 | 7 
+        207 | 11 
+        207 | 15 
+        207 | 17 
+        237 | 1 
+        237 | 6 
+        237 | 10 
+        237 | 15 
+        237 | 19 
+        247 | 4 
+        247 | 6 
+        247 | 9 
+        247 | 12 
+        247 | 16 
+        248 | 4 
+        248 | 7 
+        248 | 10 
+        248 | 13 
+        248 | 17 
+        ...
 
-207 | Critical Mass | 3 | 7 | 11 | 15 | 17  
-237 | MFS Foxes | 1 | 6 | 10 | 15 | 19  
-247 | Reboot | 4 | 6 | 9 | 12 | 16  
-248 | Fatal Error | 4 | 7 | 10 | 13 | 17  
-...
-`
+        207 | Critical Mass | 3 | 7 | 11 | 15 | 17  
+        237 | MFS Foxes | 1 | 6 | 10 | 15 | 19  
+        247 | Reboot | 4 | 6 | 9 | 12 | 16  
+        248 | Fatal Error | 4 | 7 | 10 | 13 | 17  
+        ...
