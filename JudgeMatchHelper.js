@@ -1,12 +1,16 @@
+// Purpose: to save the judges' time when they are trying to find the best time to interview a team. Typically, 
+// the best time is when a team has a break between matches. This script lists all the matches that a team is in, 
+// based on the Match Schedule. 
 
-// On a computer (desktop or laptop, not an iOS / Android device), connect to the
+// Instructions: On a computer (desktop or laptop, not an iOS / Android device), connect to the
 // scoring system and open the Match Schedule. The URL should look like:
-// http://SCORING_SYSTEM_IP_ADDRESS_HERE/event/YOUR_EVENT_CODE_HERE/schedule/
-// Open the browser's DevTools
+//   http://SCORING_SYSTEM_IP_ADDRESS_HERE/event/YOUR_EVENT_CODE_HERE/schedule/
+// Open the browser's DevTools.
 // Copy the script below, and then paste the script into the console. The first time you do this, you will
 // receive a scary warning about pasting in code from unknown sources. You will have to type something in
 // the console window to indicate you know what you are doing.
-
+// If you have copied and pasted all the lines, you should see a list of teams and the matches they 
+// play in. Copy and paste the list into Notepad to print it out.
 
 function getElementByXpath(path) {
   return document.evaluate(path, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
@@ -42,4 +46,5 @@ function logMapElements(value, key, map) {
 mapSorted.forEach(logMapElements);
 
 console.log(output);
+
 
