@@ -1,14 +1,15 @@
-// On a computer (desktop or laptop, not an iOS / Android device), connect to the
+// On a computer (desktop or laptop, not an iOS / Android device), connect to the event's
 // scoring system and open the Event Info page for the current event. You do not need to authenticate.
 // Open the Match Results Page. The URL should look like:
 // http://SCORING_SYSTEM_IP_ADDRESS_HERE/event/YOUR_EVENT_CODE_HERE/results/
-// Open the browser's DevTools - Ctrl-Shift-I on Windows or Option-Command-I on Mac.
+// Open the browser's Developer Tools using Control-Shift-I on Windows or Option-Command-I on Mac.
 // Select the Console tab, if it's not already selected.
-// Copy the script below, and then paste the script into the Console.
+// Copy the entire script contents (Control-A, Control-C), and then paste the script into the Console.
 // The first time you paste in the script, you will
 // receive a scary warning about pasting in code from unknown sources. You will have to
- // type something in the console window (usually "allow pasting")
- // to indicate you know what you are doing.
+// type something in the Console tab (usually "allow pasting")
+// to indicate you know what you are doing.
+// Press Enter, and the page should update to show the team numbers and the matches they are playing.
 
 const showField = true; // set to false if you don't want to see the field numver
 
